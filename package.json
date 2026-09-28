@@ -1,0 +1,50 @@
+{
+  "name": "slowwatch",
+  "version": "0.1.0",
+  "description": "Only log something when it becomes slow — plus automatic regression detection against your own baseline.",
+  "author": {
+    "name": "Eesa Zakariyya",
+    "email": "eesaard@gmail.com",
+    "url": "https://github.com/igu1"
+  },
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "test": "vitest run",
+    "check": "tsc --noEmit",
+    "example": "tsx examples/example.ts"
+  },
+  "engines": { "node": ">=18" },
+  "keywords": [
+    "timer",
+    "slow",
+    "performance",
+    "regression",
+    "baseline",
+    "benchmark",
+    "debug"
+  ],
+  "repository": { "type": "git", "url": "git+https://github.com/igu1/slowwatch.git" },
+  "bugs": { "url": "https://github.com/igu1/slowwatch/issues" },
+  "homepage": "https://github.com/igu1/slowwatch#readme",
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.1.0",
+    "@types/node": "^22.0.0"
+  }
+}
